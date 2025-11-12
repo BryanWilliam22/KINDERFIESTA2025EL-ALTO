@@ -1,0 +1,1221 @@
+/* ===================================
+   KINDERFIESTA - ESTILOS PRINCIPALES
+   Diseño colorido infantil con naranja y amarillo
+   =================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fff5e6 0%, #ffe0b3 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+/* ============ HEADER ============ */
+.header {
+    background: linear-gradient(135deg, #ff9933 0%, #ffcc00 100%);
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 153, 51, 0.3);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.header::before {
+    content: '🎈🎉🎊';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    opacity: 0.3;
+}
+
+
+.header h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+
+.header p {
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+
+/* ============ BOTONES DEL HEADER ============ */
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+
+.btn-admin,
+.btn-registrar {
+    background: white;
+    color: #ff9933;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.btn-registrar {
+    background: #4CAF50;
+    color: white;
+}
+
+
+.btn-admin:hover {
+    background: #ffcc00;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.btn-registrar:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ============ CONTENEDOR DE SALONES ============ */
+.salones-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* ============ TARJETA DE SALÓN ============ */
+.salon-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.salon-card::before {
+    content: '🎪';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 80px;
+    opacity: 0.05;
+}
+
+
+.salon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 153, 51, 0.3);
+}
+
+
+/* ============ 🆕 BOTONES DE ADMIN EN PÁGINA PRINCIPAL ============ */
+.salon-admin-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.salon-card:hover .salon-admin-buttons {
+    opacity: 1;
+}
+
+.btn-admin-ocultar,
+.btn-admin-eliminar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.btn-admin-ocultar {
+    background: #3498db;
+}
+
+.btn-admin-ocultar:hover {
+    background: #2980b9;
+    transform: scale(1.15);
+}
+
+.btn-admin-eliminar {
+    background: #e74c3c;
+}
+
+.btn-admin-eliminar:hover {
+    background: #c0392b;
+    transform: scale(1.15);
+}
+
+
+.salon-header {
+    border-bottom: 3px solid #ffcc00;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+
+.salon-name {
+    color: #ff9933;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.salon-category {
+    background: #ffe0b3;
+    color: #ff9933;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+
+/* ============ INFORMACIÓN DEL SALÓN ============ */
+.salon-info {
+    margin: 15px 0;
+}
+
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: #555;
+}
+
+
+.info-item i {
+    color: #ff9933;
+    margin-right: 10px;
+    font-size: 1.2em;
+    width: 25px;
+}
+
+
+.info-item a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* ============ HORARIOS ============ */
+.horarios {
+    background: #fff5e6;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 0.9em;
+}
+
+
+.horarios h4 {
+    color: #ff9933;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+
+.horario-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dotted #ffcc00;
+}
+
+
+.horario-item:last-child {
+    border-bottom: none;
+}
+
+
+.horario-dia {
+    font-weight: bold;
+    color: #666;
+}
+
+
+.horario-hora {
+    color: #888;
+}
+
+
+/* ============ CALIFICACIÓN ============ */
+.rating-display {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+
+
+.stars {
+    color: #ffcc00;
+    margin-right: 10px;
+}
+
+
+.rating-number {
+    font-weight: bold;
+    color: #ff9933;
+}
+
+
+.no-rating {
+    color: #999;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+
+/* ============ BOTONES ============ */
+.btn-comentar {
+    background: linear-gradient(135deg, #ff9933 0%, #ffcc00 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(255, 153, 51, 0.3);
+}
+
+
+.btn-comentar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 153, 51, 0.5);
+}
+
+
+.btn-mapa {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+
+.btn-mapa:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+
+/* ============ MODAL BASE ============ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease;
+}
+
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ffcc00;
+    padding-bottom: 15px;
+}
+
+
+.modal-header h2 {
+    color: #ff9933;
+    margin: 0;
+}
+
+
+.close-modal,
+.close-modal-registro {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.close-modal:hover,
+.close-modal-registro:hover {
+    color: #ff9933;
+    transform: rotate(90deg);
+}
+
+
+/* ============ FORMULARIO DE COMENTARIOS ============ */
+.comentario-form {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #fff5e6;
+    border-radius: 15px;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+.form-group label {
+    display: block;
+    color: #ff9933;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffe0b3;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ff9933;
+    box-shadow: 0 0 10px rgba(255, 153, 51, 0.2);
+}
+
+
+.form-group small {
+    display: block;
+    color: #999;
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+
+.textarea-container {
+    position: relative;
+}
+
+
+.char-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #999;
+    font-size: 0.9em;
+    background: white;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+
+.char-counter.warning {
+    color: #ff9933;
+    font-weight: bold;
+}
+
+
+.char-counter.error {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+
+/* ============ SELECCIÓN DE ESTRELLAS ============ */
+.star-rating {
+    display: flex;
+    gap: 5px;
+    font-size: 2em;
+}
+
+
+.star {
+    cursor: pointer;
+    color: #ddd;
+    transition: all 0.2s ease;
+}
+
+
+.star:hover,
+.star.active {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+
+/* ============ LISTA DE COMENTARIOS ============ */
+.comentarios-lista {
+    margin-top: 20px;
+}
+
+
+.comentarios-lista h3 {
+    color: #ff9933;
+    margin-bottom: 15px;
+}
+
+
+.no-comentarios {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+
+.comentario-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid #ffcc00;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.comentario-autor {
+    font-weight: bold;
+    color: #ff9933;
+}
+
+
+.comentario-fecha {
+    color: #999;
+    font-size: 0.85em;
+}
+
+
+.comentario-rating {
+    color: #ffcc00;
+    font-size: 1.1em;
+}
+
+
+.comentario-texto {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* ============ BOTÓN DE ENVIAR ============ */
+.btn-enviar {
+    background: linear-gradient(135deg, #ff9933 0%, #ffcc00 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 153, 51, 0.3);
+}
+
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 153, 51, 0.5);
+}
+
+
+.btn-enviar:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ============ MODAL DE REGISTRO DE LOCAL ============ */
+.modal-registro-content {
+    max-width: 800px;
+    max-height: 90vh;
+}
+
+
+.registro-form {
+    padding: 0;
+}
+
+
+.form-section {
+    background: #fff5e6;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+.form-section h3 {
+    color: #ff9933;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.form-help {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+
+/* ============ HORARIOS GRID ============ */
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+
+.horario-dia-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.horario-dia-grupo label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+
+.horario-dia-grupo input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+}
+
+
+.horario-dia-grupo input[type="text"] {
+    padding: 8px;
+    border: 2px solid #ffe0b3;
+    border-radius: 8px;
+    font-size: 0.9em;
+}
+
+
+/* ============ SUBIDA DE ARCHIVOS ============ */
+.file-upload-label {
+    display: block;
+    background: linear-gradient(135deg, #ff9933 0%, #ffcc00 100%);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+
+.file-upload-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 153, 51, 0.5);
+}
+
+
+.file-upload-label input[type="file"] {
+    display: none;
+}
+
+
+/* ============ PREVIEW DE FOTOS ============ */
+.preview-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+.preview-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 1;
+}
+
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.btn-eliminar-foto {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+
+.btn-eliminar-foto:hover {
+    background: rgba(255, 0, 0, 1);
+    transform: scale(1.1);
+}
+
+
+.foto-numero {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+
+/* ============ SERVICIOS GRID ============ */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+
+.servicios-grid label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.servicios-grid label:hover {
+    background: #ffe0b3;
+}
+
+
+.servicios-grid input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+}
+
+
+/* ============ TÉRMINOS Y CONDICIONES ============ */
+.checkbox-terminos {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+    background: #fff5e6;
+    border-radius: 10px;
+    border: 2px solid #ffe0b3;
+}
+
+
+.checkbox-terminos input[type="checkbox"] {
+    margin-top: 3px;
+    width: auto;
+    cursor: pointer;
+}
+
+
+.btn-enviar-registro {
+    margin-top: 10px;
+}
+
+
+/* ============ NO RESULTADOS ============ */
+.no-resultados {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    grid-column: 1 / -1;
+}
+
+
+.no-resultados i {
+    font-size: 4em;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+
+.no-resultados p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+.btn-limpiar {
+    background: linear-gradient(135deg, #ff9933 0%, #ffcc00 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 153, 51, 0.3);
+}
+
+
+.btn-limpiar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 153, 51, 0.5);
+}
+
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+
+    .header-buttons {
+        position: static;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+    
+    .btn-admin,
+    .btn-registrar {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+    
+    .salones-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+
+    .modal-registro-content {
+        max-height: 95vh;
+    }
+
+
+    .horarios-grid,
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .preview-fotos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ============ PÁGINA DE LOGIN ============ */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.login-container h2 {
+    color: #ff9933;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.error-message {
+    background: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* ============ PANEL DE ADMINISTRACIÓN ============ */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.btn-logout {
+    background: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.btn-logout:hover {
+    background: #d32f2f;
+    transform: scale(1.05);
+}
+
+
+.admin-comentarios {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+.comentario-admin {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.btn-editar,
+.btn-eliminar {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+
+.btn-editar {
+    background: #2196F3;
+    color: white;
+}
+
+
+.btn-editar:hover {
+    background: #1976D2;
+}
+
+
+.btn-eliminar {
+    background: #f44336;
+    color: white;
+}
+
+
+.btn-eliminar:hover {
+    background: #d32f2f;
+}
+
+
+/* ===== Carrusel de imágenes ===== */
+.carrusel {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+
+.carrusel-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+
+.carrusel-item {
+    min-width: 100%;
+    height: 100%;
+    display: none;
+}
+
+
+.carrusel-item.activo {
+    display: block;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+.carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Botones del carrusel */
+.carrusel button.prev,
+.carrusel button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+
+.carrusel button.prev:hover,
+.carrusel button.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.carrusel button.prev { left: 10px; }
+.carrusel button.next { right: 10px; }
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* =======================================================
+   🔍 ESTILOS DEL BUSCADOR DE SALONES
+   Mantiene la estética colorida de KinderFiesta
+   ======================================================= */
+
+
+.buscador-container {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 0 15px;
+}
+
+
+.buscador {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 3px solid #ffcc00;
+    border-radius: 40px;
+    box-shadow: 0 6px 20px rgba(255, 153, 51, 0.25);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.buscador:focus-within {
+    box-shadow: 0 0 15px rgba(255, 153, 51, 0.5);
+    transform: scale(1.02);
+}
+
+
+.buscador input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    color: #555;
+    border-radius: 40px 0 0 40px;
+    background: transparent;
+}
+
+
+.buscador input::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+
+.buscador button {
+    background: linear-gradient(135deg, #ff9933 0%, #ffcc00 100%);
+    border: none;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 0 40px 40px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2em;
+}
+
+
+.buscador button:hover {
+    background: linear-gradient(135deg, #ffcc00 0%, #ff9933 100%);
+    transform: scale(1.05);
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .buscador input {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+
+    .buscador button {
+        padding: 12px 18px;
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,380 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>KinderFiesta - Salones Infantiles El Alto</title>  
+    
+    <!-- CSS -->  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">  
+    
+    <!-- Font Awesome para iconos -->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>  
+<body>  
+    
+    <!-- HEADER -->  
+    <header class="header">
+        <div class="header-buttons">
+            <a href="#" class="btn-registrar" onclick="abrirModalRegistro(); return false;">
+                <i class="fas fa-plus-circle"></i> Registrar Local
+            </a>
+            <a href="/admin/login" class="btn-admin">  
+                <i class="fas fa-user-shield"></i> Administrador  
+            </a>
+        </div>
+        <h1>🎈 KinderFiesta 🎉</h1>  
+        <p>Encuentra el mejor salón infantil en El Alto, Bolivia</p>  
+    </header>  
+
+
+    <!-- BUSCADOR -->
+    <div class="buscador-container">
+        <div class="buscador">
+            <input 
+                type="text" 
+                id="buscador-input" 
+                placeholder="🔍 Buscar salón infantil por nombre o dirección..."
+            >
+            <button id="btn-buscar" onclick="buscarSalones()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- CONTENEDOR DE SALONES -->  
+    <div id="salones-container" class="salones-container">  
+        <!-- Las tarjetas se cargan dinámicamente con JavaScript -->  
+    </div>  
+    
+    <!-- MODAL DE COMENTARIOS -->  
+    <div id="modal-comentarios" class="modal">  
+        <div class="modal-content">  
+            <div class="modal-header">  
+                <h2 id="modal-salon-nombre">Salón</h2>  
+                <button class="close-modal">&times;</button>  
+            </div>  
+            
+            <!-- FORMULARIO DE COMENTARIO -->  
+            <div class="comentario-form">  
+                <h3 style="color: #ff9933; margin-bottom: 15px;">  
+                    <i class="fas fa-comment-dots"></i> Deja tu comentario  
+                </h3>  
+                
+                <div class="form-group">  
+                    <label for="comentario-nombre">  
+                        <i class="fas fa-user"></i> Tu nombre  
+                    </label>  
+                    <input   
+                        type="text"   
+                        id="comentario-nombre"   
+                        placeholder="Ej: María López"  
+                        maxlength="50"  
+                    >  
+                </div>  
+                
+                <div class="form-group">  
+                    <label>  
+                        <i class="fas fa-star"></i> Calificación  
+                    </label>  
+                    <div class="star-rating">  
+                        <span class="star" data-rating="1">★</span>  
+                        <span class="star" data-rating="2">★</span>  
+                        <span class="star" data-rating="3">★</span>  
+                        <span class="star" data-rating="4">★</span>  
+                        <span class="star" data-rating="5">★</span>  
+                    </div>  
+                </div>  
+                
+                <div class="form-group">  
+                    <label for="comentario-texto">  
+                        <i class="fas fa-comment"></i> Tu comentario  
+                    </label>  
+                    <div class="textarea-container">  
+                        <textarea   
+                            id="comentario-texto"   
+                            rows="5"   
+                            placeholder="Cuéntanos tu experiencia..."  
+                            maxlength="500"  
+                        ></textarea>  
+                        <span id="char-counter" class="char-counter">0/500</span>  
+                    </div>  
+                </div>  
+                
+                <button class="btn-enviar" onclick="enviarComentario()">  
+                    <i class="fas fa-paper-plane"></i> Enviar comentario  
+                </button>  
+            </div>  
+            
+            <!-- LISTA DE COMENTARIOS -->  
+            <div class="comentarios-lista">  
+                <h3><i class="fas fa-comments"></i> Comentarios</h3>  
+                <div id="comentarios-lista">  
+                    <!-- Los comentarios se cargan dinámicamente -->  
+                </div>  
+            </div>  
+        </div>  
+    </div>
+
+
+    <!-- MODAL DE REGISTRO DE LOCAL -->
+    <div id="modal-registro" class="modal">
+        <div class="modal-content modal-registro-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-store"></i> Registrar Mi Local Infantil</h2>
+                <button class="close-modal-registro">&times;</button>
+            </div>
+            
+            <form id="form-registro" class="registro-form" onsubmit="enviarRegistro(event)">
+                <!-- Información Básica -->
+                <div class="form-section">
+                    <h3><i class="fas fa-info-circle"></i> Información Básica</h3>
+                    
+                    <div class="form-group">
+                        <label for="reg-nombre">
+                            <i class="fas fa-store"></i> Nombre del Local *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="reg-nombre" 
+                            placeholder="Ej: Salón Infantil Feliz"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="reg-categoria">
+                            <i class="fas fa-tag"></i> Categoría
+                        </label>
+                        <select id="reg-categoria">
+                            <option value="Salón Infantil">Salón Infantil</option>
+                            <option value="Centro de Eventos">Centro de Eventos</option>
+                            <option value="Parque de Diversiones">Parque de Diversiones</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="reg-descripcion">
+                            <i class="fas fa-align-left"></i> Descripción
+                        </label>
+                        <textarea 
+                            id="reg-descripcion" 
+                            rows="4" 
+                            placeholder="Describe tu local, servicios que ofreces, capacidad, etc."
+                            maxlength="500"
+                        ></textarea>
+                    </div>
+                </div>
+
+
+                <!-- Ubicación y Contacto -->
+                <div class="form-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Ubicación y Contacto</h3>
+                    
+                    <div class="form-group">
+                        <label for="reg-direccion">
+                            <i class="fas fa-map"></i> Dirección *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="reg-direccion" 
+                            placeholder="Ej: Av. Juan Pablo II, Ciudad Satélite"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="reg-zona">
+                            <i class="fas fa-location-dot"></i> Zona/Distrito
+                        </label>
+                        <input 
+                            type="text" 
+                            id="reg-zona" 
+                            placeholder="Ej: Ciudad Satélite, Villa Adela"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="reg-telefono">
+                            <i class="fas fa-phone"></i> Teléfono/Celular *
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="reg-telefono" 
+                            placeholder="Ej: 78912345"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="reg-whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="reg-whatsapp" 
+                            placeholder="Ej: 78912345"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="reg-email">
+                            <i class="fas fa-envelope"></i> Email
+                        </label>
+                        <input 
+                            type="email" 
+                            id="reg-email" 
+                            placeholder="contacto@milocal.com"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="reg-google-maps">
+                            <i class="fas fa-map-pin"></i> Link de Google Maps
+                        </label>
+                        <input 
+                            type="url" 
+                            id="reg-google-maps" 
+                            placeholder="https://maps.app.goo.gl/..."
+                        >
+                        <small>Pega el enlace que compartes desde Google Maps</small>
+                    </div>
+                </div>
+
+
+                <!-- Horarios -->
+                <div class="form-section">
+                    <h3><i class="fas fa-clock"></i> Horarios de Atención</h3>
+                    
+                    <div class="horarios-grid">
+                        <div class="horario-dia-grupo">
+                            <label>
+                                <input type="checkbox" id="check-lunes" checked>
+                                Lunes
+                            </label>
+                            <input type="text" id="reg-lunes" placeholder="09:00 - 18:00">
+                        </div>
+                        <div class="horario-dia-grupo">
+                            <label>
+                                <input type="checkbox" id="check-martes" checked>
+                                Martes
+                            </label>
+                            <input type="text" id="reg-martes" placeholder="09:00 - 18:00">
+                        </div>
+                        <div class="horario-dia-grupo">
+                            <label>
+                                <input type="checkbox" id="check-miercoles" checked>
+                                Miércoles
+                            </label>
+                            <input type="text" id="reg-miercoles" placeholder="09:00 - 18:00">
+                        </div>
+                        <div class="horario-dia-grupo">
+                            <label>
+                                <input type="checkbox" id="check-jueves" checked>
+                                Jueves
+                            </label>
+                            <input type="text" id="reg-jueves" placeholder="09:00 - 18:00">
+                        </div>
+                        <div class="horario-dia-grupo">
+                            <label>
+                                <input type="checkbox" id="check-viernes" checked>
+                                Viernes
+                            </label>
+                            <input type="text" id="reg-viernes" placeholder="09:00 - 18:00">
+                        </div>
+                        <div class="horario-dia-grupo">
+                            <label>
+                                <input type="checkbox" id="check-sabado" checked>
+                                Sábado
+                            </label>
+                            <input type="text" id="reg-sabado" placeholder="10:00 - 20:00">
+                        </div>
+                        <div class="horario-dia-grupo">
+                            <label>
+                                <input type="checkbox" id="check-domingo" checked>
+                                Domingo
+                            </label>
+                            <input type="text" id="reg-domingo" placeholder="10:00 - 20:00">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Fotos -->
+                <div class="form-section">
+                    <h3><i class="fas fa-images"></i> Fotografías del Local</h3>
+                    <p class="form-help">Sube entre 3 y 5 fotos de tu local (máximo 5MB cada una)</p>
+                    
+                    <div class="form-group">
+                        <label class="file-upload-label">
+                            <i class="fas fa-cloud-upload-alt"></i> Seleccionar Fotos
+                            <input 
+                                type="file" 
+                                id="reg-fotos" 
+                                accept="image/*"
+                                multiple
+                                onchange="previsualizarFotos(this)"
+                            >
+                        </label>
+                    </div>
+
+
+                    <div id="preview-fotos" class="preview-fotos">
+                        <!-- Aquí se mostrarán las previsualizaciones -->
+                    </div>
+                </div>
+
+
+                <!-- Servicios Adicionales -->
+                <div class="form-section">
+                    <h3><i class="fas fa-list-check"></i> Servicios que Ofreces</h3>
+                    
+                    <div class="servicios-grid">
+                        <label><input type="checkbox" class="servicio-check" value="Animación"> Animación</label>
+                        <label><input type="checkbox" class="servicio-check" value="Catering"> Catering/Comida</label>
+                        <label><input type="checkbox" class="servicio-check" value="Decoración"> Decoración</label>
+                        <label><input type="checkbox" class="servicio-check" value="Inflables"> Inflables</label>
+                        <label><input type="checkbox" class="servicio-check" value="Juegos"> Juegos</label>
+                        <label><input type="checkbox" class="servicio-check" value="Música"> Música/DJ</label>
+                        <label><input type="checkbox" class="servicio-check" value="Estacionamiento"> Estacionamiento</label>
+                        <label><input type="checkbox" class="servicio-check" value="Seguridad"> Seguridad</label>
+                        <label><input type="checkbox" class="servicio-check" value="WiFi"> WiFi</label>
+                        <label><input type="checkbox" class="servicio-check" value="Aire Acondicionado"> Aire Acondicionado</label>
+                    </div>
+                </div>
+
+
+                <!-- Términos y Envío -->
+                <div class="form-section">
+                    <label class="checkbox-terminos">
+                        <input type="checkbox" id="reg-terminos" required>
+                        Acepto los términos y condiciones. La información proporcionada es veraz y será revisada por un administrador antes de publicarse.
+                    </label>
+                </div>
+
+
+                <button type="submit" class="btn-enviar btn-enviar-registro">
+                    <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->  
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>  
+    
+</body>  
+</html>

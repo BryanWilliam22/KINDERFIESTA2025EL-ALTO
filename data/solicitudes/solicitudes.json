@@ -1,0 +1,251 @@
+[
+    {
+        "id": "solicitud_20251020_194046",
+        "fecha_solicitud": "2025-10-20T19:40:46.192440",
+        "estado": "aprobado",
+        "datos": {
+            "nombre": "Salon Infantil Luna",
+            "categoria": "Salón Infantil",
+            "descripcion": "buena",
+            "direccion": "Av. Juan pablo",
+            "zona": "Ciudad Satelite",
+            "telefono": "67107296",
+            "whatsapp": "67107296",
+            "email": "eate.luisalberto.montoya.se@unifranz.edu.bo",
+            "google_maps": "https://maps.app.goo.gl/9QhcY4kUmMiAjDfJ7",
+            "horarios": {
+                "lunes": "09:00 - 19:00"
+            },
+            "servicios": [
+                "Animación",
+                "Decoración",
+                "Juegos"
+            ],
+            "fotos": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ],
+            "carpeta_fotos": "solicitud_20251020_194046"
+        },
+        "fecha_aprobacion": "2025-10-20T19:54:39.675361",
+        "salon_id": 6
+    },
+    {
+        "id": "solicitud_20251022_112623",
+        "fecha_solicitud": "2025-10-22T11:26:23.594957",
+        "estado": "rechazado",
+        "datos": {
+            "nombre": "Salon Infantil Luna",
+            "categoria": "Salón Infantil",
+            "descripcion": "ES un salon de eventos dedicados exclusivamente para festijos infantiles de menor a mayor cantidad de invitados",
+            "direccion": "Av. Juan pablo",
+            "zona": "Ciudad Satelite",
+            "telefono": "67107296",
+            "whatsapp": "67107296",
+            "email": "eate.luisalberto.montoya.se@unifranz.edu.bo",
+            "google_maps": "https://maps.app.goo.gl/9QhcY4kUmMiAjDfJ7",
+            "horarios": {
+                "lunes": "09:00 - 19:00"
+            },
+            "servicios": [
+                "Animación",
+                "Juegos",
+                "Música",
+                "WiFi"
+            ],
+            "fotos": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ],
+            "carpeta_fotos": "solicitud_20251022_112623"
+        },
+        "fecha_rechazo": "2025-10-28T22:46:37.910548",
+        "motivo_rechazo": "fotos"
+    },
+    {
+        "id": "solicitud_20251022_113247",
+        "fecha_solicitud": "2025-10-22T11:32:47.041485",
+        "estado": "aprobado",
+        "datos": {
+            "nombre": "Salon Infantil Luna",
+            "categoria": "Salón Infantil",
+            "descripcion": "Bueno",
+            "direccion": "Av. Juan pablo",
+            "zona": "Ciudad Satelite",
+            "telefono": "67107296",
+            "whatsapp": "67107296",
+            "email": "eate.luisalberto.montoya.se@unifranz.edu.bo",
+            "google_maps": "https://maps.app.goo.gl/9QhcY4kUmMiAjDfJ7",
+            "horarios": {
+                "lunes": "09:00 - 19:00"
+            },
+            "servicios": [
+                "Catering",
+                "Juegos",
+                "Estacionamiento",
+                "WiFi"
+            ],
+            "fotos": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg",
+                "4.jpg"
+            ],
+            "carpeta_fotos": "solicitud_20251022_113247"
+        },
+        "fecha_aprobacion": "2025-11-05T09:32:44.083609",
+        "salon_id": 6
+    },
+    {
+        "id": "solicitud_20251028_210442",
+        "fecha_solicitud": "2025-10-28T21:04:42.843004",
+        "estado": "aprobado",
+        "datos": {
+            "nombre": "Salon Infantil Luna",
+            "categoria": "Centro de Eventos",
+            "descripcion": "Bonito",
+            "direccion": "Av. Juan pablo",
+            "zona": "Ciudad Satelite",
+            "telefono": "67107296",
+            "whatsapp": "67107296",
+            "email": "eate.luisalberto.montoya.se@unifranz.edu.bo",
+            "google_maps": "https://maps.app.goo.gl/9QhcY4kUmMiAjDfJ7",
+            "horarios": {
+                "lunes": "09:00 - 19:00"
+            },
+            "servicios": [
+                "Animación"
+            ],
+            "fotos": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ],
+            "carpeta_fotos": "solicitud_20251028_210442"
+        },
+        "fecha_aprobacion": "2025-11-05T09:34:13.979019",
+        "salon_id": 7
+    },
+    {
+        "id": "solicitud_20251028_212411",
+        "fecha_solicitud": "2025-10-28T21:24:11.989154",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Salon Infantil Luna",
+            "categoria": "Salón Infantil",
+            "descripcion": "Tenemos la capacidad de 100 personas",
+            "direccion": "Av. Juan pablo",
+            "zona": "Ciudad Satelite",
+            "telefono": "67107296",
+            "whatsapp": "67107296",
+            "email": "eate.luisalberto.montoya.se@unifranz.edu.bo",
+            "google_maps": "https://maps.app.goo.gl/9QhcY4kUmMiAjDfJ7",
+            "horarios": {
+                "lunes": "09:00 - 19:00"
+            },
+            "servicios": [
+                "Animación",
+                "Juegos"
+            ],
+            "fotos": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg",
+                "4.jpg"
+            ],
+            "carpeta_fotos": "solicitud_20251028_212411"
+        }
+    },
+    {
+        "id": "solicitud_20251028_215745",
+        "fecha_solicitud": "2025-10-28T21:57:45.358263",
+        "estado": "pendiente",
+        "datos": {
+            "nombre": "Salon Infantil Luna",
+            "categoria": "Salón Infantil",
+            "descripcion": "bonnito",
+            "direccion": "Av. Juan pablo",
+            "zona": "Ciudad Satelite",
+            "telefono": "67107296",
+            "whatsapp": "67107296",
+            "email": "eate.luisalberto.montoya.se@unifranz.edu.bo",
+            "google_maps": "https://maps.app.goo.gl/9QhcY4kUmMiAjDfJ7",
+            "horarios": {
+                "lunes": "09:00 - 19:00"
+            },
+            "servicios": [
+                "Aire Acondicionado"
+            ],
+            "fotos": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ],
+            "carpeta_fotos": "solicitud_20251028_215745"
+        }
+    },
+    {
+        "id": "solicitud_20251028_222222",
+        "fecha_solicitud": "2025-10-28T22:22:22.089380",
+        "estado": "rechazado",
+        "datos": {
+            "nombre": "Salon Infantil Luna",
+            "categoria": "Salón Infantil",
+            "descripcion": "bonitoo",
+            "direccion": "Av. Juan pablo",
+            "zona": "Ciudad Satelite",
+            "telefono": "67107296",
+            "whatsapp": "67107296",
+            "email": "eate.luisalberto.montoya.se@unifranz.edu.bo",
+            "google_maps": "https://maps.app.goo.gl/9QhcY4kUmMiAjDfJ7",
+            "horarios": {
+                "lunes": "09:00 - 19:00"
+            },
+            "servicios": [
+                "Juegos",
+                "WiFi"
+            ],
+            "fotos": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ],
+            "carpeta_fotos": "solicitud_20251028_222222"
+        },
+        "fecha_rechazo": "2025-10-28T23:18:01.393247",
+        "motivo_rechazo": "fotos"
+    },
+    {
+        "id": "solicitud_20251028_222937",
+        "fecha_solicitud": "2025-10-28T22:29:37.266527",
+        "estado": "rechazado",
+        "datos": {
+            "nombre": "Salon Infantil Luna",
+            "categoria": "Salón Infantil",
+            "descripcion": "bonitoo",
+            "direccion": "Av. Juan pablo",
+            "zona": "Ciudad Satelite",
+            "telefono": "67107296",
+            "whatsapp": "67107296",
+            "email": "eate.luisalberto.montoya.se@unifranz.edu.bo",
+            "google_maps": "https://maps.app.goo.gl/9QhcY4kUmMiAjDfJ7",
+            "horarios": {
+                "lunes": "09:00 - 19:00"
+            },
+            "servicios": [
+                "Música",
+                "Seguridad"
+            ],
+            "fotos": [
+                "1.jpg",
+                "2.jpg",
+                "3.jpg"
+            ],
+            "carpeta_fotos": "solicitud_20251028_222937"
+        },
+        "fecha_rechazo": "2025-10-29T14:56:11.172196",
+        "motivo_rechazo": "fotos"
+    }
+]
