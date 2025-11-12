@@ -1,0 +1,23 @@
+# Archivos de secretos y configuración
+.env
+*.env
+config.py
+db_config.py
+
+# Bases de datos locales y archivos innecesarios
+*.sqlite
+*.sqlite3
+*.db
+__pycache__/
+
+# Carpeta de entorno virtual (si tienes una)
+venv/
+ENV/
+
+# Archivos y carpetas temporales/IDE
+*.log
+*.pyc
+*.pyo
+.DS_Store
+.vscode/
+.idea/
