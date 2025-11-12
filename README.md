@@ -11,37 +11,6 @@ REQUESITOS PREVIOS:
 - pip (gestor de paquetes de Python)
 - Git
 
-ESTRUCTURA:
-
-KINDERFIESTA2025EL-ALTO/
-│
-├── static/                          # Archivos estáticos (CSS, JS, imágenes)
-│   ├── css/
-│   │   └── style.css               # Estilos principales y responsive
-│   ├── js/
-│   │   └── main.js                 # Lógica de frontend y llamadas a API
-│   ├── imagenes/                   # Fotos de los salones (por carpetas)
-│   │   ├── salon1/
-│   │   ├── salon2/
-│   │   └── ...
-│   └── solicitudes/                # Fotos de solicitudes pendientes
-│
-├── templates/                       # Plantillas HTML
-│   ├── index.html                  # Página principal (búsqueda y listado)
-│   ├── admin_panel.html            # Panel de administración
-│   └── admin_login.html            # Login de administrador
-│
-├── data/solicitudes/
-│   └── solicitudes.json            # Registro de solicitudes de nuevos locales
-│
-├── app.py                          # Aplicación principal (rutas Flask)
-├── database.py                     # Conexión y consultas MySQL
-├── database_setup.sql              # Script para crear tablas
-├── requirements.txt                # Dependencias Python
-├── .gitignore                      # Archivos a ignorar en Git
-└── README.md                       # Este archivo
-
-
 INSTALACIÓN:
 
 1. Clona el repositorio:
