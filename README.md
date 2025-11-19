@@ -115,3 +115,26 @@ Ya dentro de lo que es la seguridad y como tal la moderación seria:
 
 AUTOR: INNOVADEV
 
+## Instalación (Corrección y Mejora)
+
+
+👉 Este cambio es perfecto porque mejora la claridad del proyecto sin modificar el código.
+
+---
+
+# ✅ OPCIÓN 2: Mejorar seguridad en database.py (comentarios útiles)
+
+Puedes agregar comentarios explicativos (esto cuenta como mejora).
+
+```python
+# Se agregó explicación sobre la importancia de no subir credenciales reales a GitHub
+# También se recomienda usar variables de entorno para mayor seguridad.
+
+DB_CONFIG = {
+    'host': 'localhost',
+    'user': 'root',                     # Se recomienda crear un usuario con menos privilegios
+    'password': 'TU_CONTRASEÑA',        # No subir la contraseña real al repositorio
+    'database': 'kinderfiesta',
+    'charset': 'utf8mb4',
+    'collation': 'utf8mb4_unicode_ci'
+}
